@@ -86,9 +86,6 @@ export default ipfs;
   - Call ipfs get
   - Write buffer out to a file
 
-- Example of IPFS in <img>
-  - <img src="https://ipfs.io/ipfs/QmY4x4vqe28hFypVjhWFBoo9NHWANPG8UG9aPSVPKvbiYs">
-
 ## Author
 
 - [@Alexandre Rapchan B. Barros](https://www.github.com/AleRapchan)
