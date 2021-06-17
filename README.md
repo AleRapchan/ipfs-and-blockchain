@@ -1,8 +1,8 @@
-![Logo](https://ipfs.io/ipfs/QmQJ68PFMDdAsgCZvA1UVzzn18asVcf7HVvCDgpjiSCAse?filename=IPFS.png)
-
 # IPFS with Blockchain
 
-Storing data in IPFS and the file's hash in the blockchain utilizing IPFS HTTP client library.
+Storing data in IPFS and the file's hash in the Ethereum blockchain.
+
+![Logo](https://ipfs.io/ipfs/QmX9UzopTujtCZAyDZ7zRdtWH8eXRCUQaGgbQYtoC2TEHP?filename=ipfs.png)
 
 ## Goals for IPFS
 
