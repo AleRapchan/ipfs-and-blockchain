@@ -31,8 +31,6 @@ A blockchain smart contract system that integrates to IPFS.
 
 **Client:** IPFS, React
 
-**Server:** Node, Express
-
 ## Local IPFS
 
 - Get a copy of the IPFS from https://dist.ipfs.io/#go-ipfs
@@ -49,7 +47,7 @@ ipfs init
 ipfs daemon
 ```
 
-- Check out your local interface on http://localhost:5001/ipfs/
+- Check out your local interface on http://localhost:3000/ipfs/
 
 ## React interface to IPFS
 
@@ -57,8 +55,8 @@ ipfs daemon
 
 ```bash
 npm install -g create-react-app
-npx create-react-app new-ipfs
-cd new-ipfs
+npx create-react-app ipfs
+cd ipfs
 npm install fs-extra
 npm install ipfs
 ```

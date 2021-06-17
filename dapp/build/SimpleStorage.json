@@ -1,0 +1,954 @@
+{
+  "contractName": "SimpleStorage",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_ipfsHash",
+          "type": "string"
+        }
+      ],
+      "name": "SaveFile",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_ipfsHash\",\"type\":\"string\"}],\"name\":\"SaveFile\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/alexandrebarros/Documents/Code/GBC/Design-Patterns/2-Labs/IPFS-and-blockchain/dapp/contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/alexandrebarros/Documents/Code/GBC/Design-Patterns/2-Labs/IPFS-and-blockchain/dapp/contracts/SimpleStorage.sol\":{\"keccak256\":\"0xf8f2280bc448d078912594203aba5c0399b5c0ac71642c6acedf742b14734c36\",\"urls\":[\"bzz-raw://874bb5841adad8f4e9e1a74cc77a9c0c48a67ab11afd5222a3fb3caf7fb3acf3\",\"dweb:/ipfs/QmZ25Rxhfacr3zqzwxEx6CzVmtPvR46haCfFhpTWzW8q7q\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103e0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c146100f6575b600080fd5b6100f46004803603602081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610179565b005b6100fe610264565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013e578082015181840152602081019050610123565b50505050905090810190601f16801561016b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b806000908051906020019061018f929190610306565b503373ffffffffffffffffffffffffffffffffffffffff167f845d3e066fe5f9a03447fa74ca6aea3bcc4475b15c108902ee01247c3a799cc5600060405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156102535780601f1061022857610100808354040283529160200191610253565b820191906000526020600020905b81548152906001019060200180831161023657829003601f168201915b50509250505060405180910390a250565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102fc5780601f106102d1576101008083540402835291602001916102fc565b820191906000526020600020905b8154815290600101906020018083116102df57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061034757805160ff1916838001178555610375565b82800160010185558215610375579182015b82811115610374578251825591602001919060010190610359565b5b5090506103829190610386565b5090565b6103a891905b808211156103a457600081600090555060010161038c565b5090565b9056fea265627a7a7231582075b6615d0ca93385a6cae81e3bbed79945a8bbc681b68501d0e2e45ef1af1bf664736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c146100f6575b600080fd5b6100f46004803603602081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610179565b005b6100fe610264565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013e578082015181840152602081019050610123565b50505050905090810190601f16801561016b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b806000908051906020019061018f929190610306565b503373ffffffffffffffffffffffffffffffffffffffff167f845d3e066fe5f9a03447fa74ca6aea3bcc4475b15c108902ee01247c3a799cc5600060405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156102535780601f1061022857610100808354040283529160200191610253565b820191906000526020600020905b81548152906001019060200180831161023657829003601f168201915b50509250505060405180910390a250565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102fc5780601f106102d1576101008083540402835291602001916102fc565b820191906000526020600020905b8154815290600101906020018083116102df57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061034757805160ff1916838001178555610375565b82800160010185558215610375579182015b82811115610374578251825591602001919060010190610359565b5b5090506103829190610386565b5090565b6103a891905b808211156103a457600081600090555060010161038c565b5090565b9056fea265627a7a7231582075b6615d0ca93385a6cae81e3bbed79945a8bbc681b68501d0e2e45ef1af1bf664736f6c63430005100032",
+  "sourceMap": "66:666:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:666:1;;;;;;;",
+  "deployedSourceMap": "66:666:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:666:1;;;;;;;;;;;;;;;;;;;;;;;;494:125;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;494:125:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;494:125:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;494:125:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;494:125:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;494:125:1;;;;;;;;;;;;;;;:::i;:::-;;623:107;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;623:107:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;494:125;552:5;541:8;:16;;;;;;;;;;;;:::i;:::-;;578:10;569:31;;;590:8;569:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;494:125;:::o;623:107::-;659:13;717:8;710:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;623:107;:::o;66:666::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.7.0;\n\ncontract SimpleStorage { \n  // State variable . Way to write to the blockchain.\n  string ipfsHash; // Represent the hash (encrypted location) of the file in IPFS\n\n  event SaveFile(address indexed _from, string _ipfsHash); \n\n  //_ipfsHash: <indexed> Cannot decode indexed parameter of reference type string\n  //, uint indexed _value\n\n // TypeError: Data location must be \"memory\" for parameter in function, but none was given.\n  function set(string memory value) public {\n    ipfsHash = value ;\n    emit SaveFile(msg.sender, ipfsHash ); //, msg.value\n  }\n\n  function get() public view returns (string memory) { // Solidity is changing a lot\n    return ipfsHash;\n  }\n}\n",
+  "sourcePath": "/Users/alexandrebarros/Documents/Code/GBC/Design-Patterns/2-Labs/IPFS-and-blockchain/dapp/contracts/SimpleStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/alexandrebarros/Documents/Code/GBC/Design-Patterns/2-Labs/IPFS-and-blockchain/dapp/contracts/SimpleStorage.sol",
+    "exportedSymbols": {
+      "SimpleStorage": [
+        71
+      ]
+    },
+    "id": 72,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 38,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 71,
+        "linearizedBaseContracts": [
+          71
+        ],
+        "name": "SimpleStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 40,
+            "name": "ipfsHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 71,
+            "src": "148:15:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 39,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "148:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 46,
+            "name": "SaveFile",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42,
+                  "indexed": true,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "246:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 44,
+                  "indexed": false,
+                  "name": "_ipfsHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "269:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "269:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "245:41:1"
+            },
+            "src": "231:56:1"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "535:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 53,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 51,
+                      "name": "ipfsHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "541:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 52,
+                      "name": "value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 48,
+                      "src": "552:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "541:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 54,
+                  "nodeType": "ExpressionStatement",
+                  "src": "541:16:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 56,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 86,
+                          "src": "578:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 57,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "578:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 58,
+                        "name": "ipfsHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 40,
+                        "src": "590:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      ],
+                      "id": 55,
+                      "name": "SaveFile",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "569:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory)"
+                      }
+                    },
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "569:31:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 60,
+                  "nodeType": "EmitStatement",
+                  "src": "564:36:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 62,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 62,
+                  "src": "507:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:21:1"
+            },
+            "returnParameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "535:0:1"
+            },
+            "scope": 71,
+            "src": "494:125:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 69,
+              "nodeType": "Block",
+              "src": "674:56:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 67,
+                    "name": "ipfsHash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 40,
+                    "src": "717:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 66,
+                  "id": 68,
+                  "nodeType": "Return",
+                  "src": "710:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 70,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "635:2:1"
+            },
+            "returnParameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "659:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "659:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "658:15:1"
+            },
+            "scope": 71,
+            "src": "623:107:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 72,
+        "src": "66:666:1"
+      }
+    ],
+    "src": "32:701:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/alexandrebarros/Documents/Code/GBC/Design-Patterns/2-Labs/IPFS-and-blockchain/dapp/contracts/SimpleStorage.sol",
+      "exportedSymbols": {
+        "SimpleStorage": [
+          71
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".21",
+            "<",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 38,
+        "name": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            71
+          ],
+          "name": "SimpleStorage",
+          "scope": 72
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ipfsHash",
+              "scope": 71,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 39,
+                "name": "ElementaryTypeName",
+                "src": "148:6:1"
+              }
+            ],
+            "id": 40,
+            "name": "VariableDeclaration",
+            "src": "148:15:1"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "SaveFile"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "_from",
+                      "scope": 46,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 41,
+                        "name": "ElementaryTypeName",
+                        "src": "246:7:1"
+                      }
+                    ],
+                    "id": 42,
+                    "name": "VariableDeclaration",
+                    "src": "246:21:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_ipfsHash",
+                      "scope": 46,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 43,
+                        "name": "ElementaryTypeName",
+                        "src": "269:6:1"
+                      }
+                    ],
+                    "id": 44,
+                    "name": "VariableDeclaration",
+                    "src": "269:16:1"
+                  }
+                ],
+                "id": 45,
+                "name": "ParameterList",
+                "src": "245:41:1"
+              }
+            ],
+            "id": 46,
+            "name": "EventDefinition",
+            "src": "231:56:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "set",
+              "scope": 71,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "value",
+                      "scope": 62,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 47,
+                        "name": "ElementaryTypeName",
+                        "src": "507:6:1"
+                      }
+                    ],
+                    "id": 48,
+                    "name": "VariableDeclaration",
+                    "src": "507:19:1"
+                  }
+                ],
+                "id": 49,
+                "name": "ParameterList",
+                "src": "506:21:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 50,
+                "name": "ParameterList",
+                "src": "535:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 40,
+                              "type": "string storage ref",
+                              "value": "ipfsHash"
+                            },
+                            "id": 51,
+                            "name": "Identifier",
+                            "src": "541:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 48,
+                              "type": "string memory",
+                              "value": "value"
+                            },
+                            "id": 52,
+                            "name": "Identifier",
+                            "src": "552:5:1"
+                          }
+                        ],
+                        "id": 53,
+                        "name": "Assignment",
+                        "src": "541:16:1"
+                      }
+                    ],
+                    "id": 54,
+                    "name": "ExpressionStatement",
+                    "src": "541:16:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 46,
+                              "type": "function (address,string memory)",
+                              "value": "SaveFile"
+                            },
+                            "id": 55,
+                            "name": "Identifier",
+                            "src": "569:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 86,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 56,
+                                "name": "Identifier",
+                                "src": "578:3:1"
+                              }
+                            ],
+                            "id": 57,
+                            "name": "MemberAccess",
+                            "src": "578:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 40,
+                              "type": "string storage ref",
+                              "value": "ipfsHash"
+                            },
+                            "id": 58,
+                            "name": "Identifier",
+                            "src": "590:8:1"
+                          }
+                        ],
+                        "id": 59,
+                        "name": "FunctionCall",
+                        "src": "569:31:1"
+                      }
+                    ],
+                    "id": 60,
+                    "name": "EmitStatement",
+                    "src": "564:36:1"
+                  }
+                ],
+                "id": 61,
+                "name": "Block",
+                "src": "535:84:1"
+              }
+            ],
+            "id": 62,
+            "name": "FunctionDefinition",
+            "src": "494:125:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "get",
+              "scope": 71,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 63,
+                "name": "ParameterList",
+                "src": "635:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 70,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 64,
+                        "name": "ElementaryTypeName",
+                        "src": "659:6:1"
+                      }
+                    ],
+                    "id": 65,
+                    "name": "VariableDeclaration",
+                    "src": "659:13:1"
+                  }
+                ],
+                "id": 66,
+                "name": "ParameterList",
+                "src": "658:15:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 66
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 40,
+                          "type": "string storage ref",
+                          "value": "ipfsHash"
+                        },
+                        "id": 67,
+                        "name": "Identifier",
+                        "src": "717:8:1"
+                      }
+                    ],
+                    "id": 68,
+                    "name": "Return",
+                    "src": "710:15:1"
+                  }
+                ],
+                "id": 69,
+                "name": "Block",
+                "src": "674:56:1"
+              }
+            ],
+            "id": 70,
+            "name": "FunctionDefinition",
+            "src": "623:107:1"
+          }
+        ],
+        "id": 71,
+        "name": "ContractDefinition",
+        "src": "66:666:1"
+      }
+    ],
+    "id": 72,
+    "name": "SourceUnit",
+    "src": "32:701:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-06-15T17:15:37.562Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
