@@ -4,15 +4,15 @@ Storing data in IPFS and the file's hash in the Ethereum blockchain.
 
 ![Logo](http://alexandrebarros.com/global/ipfs-blockchain.png)
 
-## Goals for IPFS
+## Goals for IPFS Blockchain Project
 
 A blockchain smart contract system that integrates to IPFS.
 
-- Upload a file to IPFS from webpage and get the hash
-- Store hash on blockchain in smart contract
-- Read back hash from the smart contract
-- Retrieve file from IPFS using hash
-- Display on webpage
+- [X] Upload a file to IPFS from webpage and get the hash
+- [X] Store hash on blockchain in smart contract
+- [X] Read back hash from the smart contract
+- [X] Retrieve file from IPFS using hash
+- [X] Display on webpage
 
 ## Problem
 
