@@ -2,7 +2,7 @@
 
 Storing data in IPFS and the file's hash in the Ethereum blockchain.
 
-![Logo](https://ipfs.io/ipfs/QmX9UzopTujtCZAyDZ7zRdtWH8eXRCUQaGgbQYtoC2TEHP?filename=ipfs.png)
+![Logo](http://alexandrebarros.com/global/ipfs-blockchain.png)
 
 ## Goals for IPFS
 
