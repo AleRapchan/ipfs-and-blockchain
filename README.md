@@ -92,6 +92,8 @@ export default ipfs;
 
 - [@Alexandre Rapchan B. Barros](https://www.github.com/AleRapchan)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alerapchan)
+
 ## Support
 
 For support, email blockchain@alexandrebarros.com or join our Slack channel.
