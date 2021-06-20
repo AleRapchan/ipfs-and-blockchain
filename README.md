@@ -27,6 +27,10 @@ A blockchain smart contract system that integrates to IPFS.
 - IPFS maintains an index to find the closest copies of all of the blocks to retrieve the file
 - Store the hash in the blockchain
 
+## Screenshot
+
+![Logo](http://alexandrebarros.com/global/ipfs-preview.png)
+
 ## Tech Stack
 
 **Client:** IPFS, React
