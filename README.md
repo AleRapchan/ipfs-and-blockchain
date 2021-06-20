@@ -68,7 +68,7 @@ npm install ipfs
 - Connect to your local IPFS
 - Make an ipfs.js file
 
-```bash
+```js
 const ipfsApi = require(‘ipfs-api’);
 const ipfs = new ipfsApi(‘localhost’, ‘5001’, {protocol:‘http’});
 export default ipfs;
